@@ -135,6 +135,22 @@
   .hc-foot .big b{color:var(--mint)}
   .float-tag{position:absolute;top:-16px;right:-14px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);border-radius:14px;padding:11px 15px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:13.5px}
   .float-tag .ring{width:30px;height:30px;border-radius:50%;background:var(--mint-tint);color:var(--mint-dark);display:grid;place-items:center;font-size:15px}
+  /* hero-card: statusflikar + ärenderader (speglar nya klientportalen) */
+  .hc-tabs{display:flex;gap:16px;padding:14px 2px 2px;flex-wrap:wrap}
+  .hc-tab{font-size:12.5px;font-weight:600;color:var(--ink-soft);padding:4px 0 8px;border-bottom:2px solid transparent;display:inline-flex;align-items:center;gap:7px}
+  .hc-tab.is-active{color:var(--ink);border-bottom-color:var(--ink)}
+  .hc-tab .c{font-size:11px;font-weight:700;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:1px 7px;color:var(--ink-soft)}
+  .hc-tab.is-active .c{background:var(--ink);border-color:var(--ink);color:#fff}
+  .hc-case{display:flex;align-items:center;gap:13px;padding:14px 2px;border-bottom:1px solid var(--line)}
+  .hc-case:last-of-type{border-bottom:none}
+  .hc-cid{font-size:12.5px;font-weight:700;color:#8b93a3;min-width:56px}
+  .hc-cinfo{flex:1;min-width:0}
+  .hc-cinfo strong{display:block;font-weight:700;font-size:14px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .hc-cinfo span{font-size:12px;color:var(--ink-soft)}
+  .hc-pill{font-size:11.5px;font-weight:700;padding:5px 11px;border-radius:999px;white-space:nowrap}
+  .hc-pill.mint{color:#2d8c78;background:rgba(63,179,154,.10);border:1px solid rgba(63,179,154,.30)}
+  .hc-pill.amber{color:#b8862a;background:rgba(184,134,42,.10);border:1px solid rgba(184,134,42,.30)}
+  .hc-pill.rose{color:#c2564a;background:rgba(194,86,74,.10);border:1px solid rgba(194,86,74,.30)}
 
   /* logos / trust */
   .trust{padding:34px 0 8px;border-top:1px solid var(--line)}
@@ -330,31 +346,30 @@
       <div class="float-tag"><span class="ring">✓</span> Du får betalt först</div>
       <div class="hc-top">
         <span class="t">Mina ärenden</span>
-        <span class="badge-paid">2 betalda</span>
+        <span class="badge-paid">12 aktiva</span>
       </div>
-      <div class="hc-row">
-        <div class="hc-left">
-          <div class="hc-ico green">↑</div>
-          <div><div class="hc-name">Faktura #2041</div><div class="hc-sub">Nordvik Bygg AB</div></div>
-        </div>
-        <div style="text-align:right"><div class="hc-amt">24 500 kr</div><div class="hc-status">Betald</div></div>
+      <div class="hc-tabs">
+        <span class="hc-tab is-active">Alla <span class="c">12</span></span>
+        <span class="hc-tab">Pågående <span class="c">8</span></span>
+        <span class="hc-tab">Betalningsplan <span class="c">3</span></span>
       </div>
-      <div class="hc-row">
-        <div class="hc-left">
-          <div class="hc-ico green">↑</div>
-          <div><div class="hc-name">Faktura #2038</div><div class="hc-sub">Mörk Konsult AB</div></div>
-        </div>
-        <div style="text-align:right"><div class="hc-amt">9 800 kr</div><div class="hc-status">Betald</div></div>
+      <div class="hc-case">
+        <span class="hc-cid">#104582</span>
+        <div class="hc-cinfo"><strong>Nordic Telecom AB</strong><span>Betalningsplan uppdaterad</span></div>
+        <span class="hc-pill mint">Betalningsplan</span>
       </div>
-      <div class="hc-row">
-        <div class="hc-left">
-          <div class="hc-ico">⏱</div>
-          <div><div class="hc-name">Faktura #2052</div><div class="hc-sub">Lindqvist Handel</div></div>
-        </div>
-        <div style="text-align:right"><div class="hc-amt">14 200 kr</div><div class="hc-sub">Pågår</div></div>
+      <div class="hc-case">
+        <span class="hc-cid">#104213</span>
+        <div class="hc-cinfo"><strong>Sydkust Service AB</strong><span>9 dagar över förfallodatum</span></div>
+        <span class="hc-pill amber">Krav skickat</span>
+      </div>
+      <div class="hc-case">
+        <span class="hc-cid">#103998</span>
+        <div class="hc-cinfo"><strong>Meddelande inväntar svar</strong><span>Fråga om underlaget</span></div>
+        <span class="hc-pill rose">Svar krävs</span>
       </div>
       <div class="hc-foot">
-        <div><div class="lbl">Utbetalt till dig</div><div class="big">34 300 <b>kr</b></div></div>
+        <div><div class="lbl">Utbetalt till dig</div><div class="big">4 180 <b>kr</b></div></div>
         <div style="text-align:right"><div class="lbl">Din kostnad</div><div class="big"><b>0 kr</b></div></div>
       </div>
     </div>
@@ -497,7 +512,7 @@
     <div class="stats-grid">
       <div class="stat"><div class="n">0 <b>kr</b></div><div class="l">Kostnad för dig</div></div>
       <div class="stat"><div class="n">&lt;5 <b>min</b></div><div class="l">Att bli kund</div></div>
-      <div class="stat"><div class="n">2020</div><div class="l">Grundat av Finansia</div></div>
+      <div class="stat"><div class="n">2020</div><div class="l">Driver in förfallna fakturor sedan</div></div>
       <div class="stat"><div class="n">100<b>%</b></div><div class="l">Digital med BankID</div></div>
     </div>
   </div>
