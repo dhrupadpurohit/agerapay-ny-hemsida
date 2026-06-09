@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Claude Code lokal konfig
+.claude/
+
+# Interna arbetsanteckningar – ska inte ligga publikt
+CLAUDE.md
+agerapay-projekt-sammanfattning.md

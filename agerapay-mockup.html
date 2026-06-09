@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agera Pay – Kostnadsfri inkasso för företagare</title>
+<meta name="description" content="Har du obetalda fakturor? Agera Pay driver in dina förfallna fordringar – helt kostnadsfritt. Vi får inte betalt om inte du får betalt. Inga fasta kostnader, ingen bindningstid. Registrera dig med BankID på minuter.">
+<meta name="keywords" content="inkasso, kostnadsfri inkasso, obetalda fakturor, fordringar, BankID, Agera Pay, Finansia, Karlskrona">
+<meta name="author" content="Agera Pay AB">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0E2A57">
+<link rel="canonical" href="https://agerapay.se/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Agera Pay">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:url" content="https://agerapay.se/">
+<meta property="og:title" content="Agera Pay – Kostnadsfri inkasso för företagare">
+<meta property="og:description" content="Vi får inte betalt om inte du får betalt. Driv in dina obetalda fakturor helt kostnadsfritt – inga fasta avgifter, ingen bindningstid. Registrera med BankID på minuter.">
+<meta property="og:image" content="https://agerapay.se/wp-content/uploads/2020/02/SVG-Agera-Pay-Logotyp-Morkgra.svg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agera Pay – Kostnadsfri inkasso för företagare">
+<meta name="twitter:description" content="Vi får inte betalt om inte du får betalt. Driv in dina obetalda fakturor helt kostnadsfritt – inga fasta avgifter, ingen bindningstid.">
+<meta name="twitter:image" content="https://agerapay.se/wp-content/uploads/2020/02/SVG-Agera-Pay-Logotyp-Morkgra.svg">
+
+<link rel="icon" type="image/svg+xml" href="assets/agerapay-logo-morkgra.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A1A33;
+    --ink-soft:#33425C;
+    --navy:#0E2A57;
+    --mint:#00C28A;
+    --mint-dark:#069A6E;
+    --mint-tint:#E6FAF3;
+    --sky:#EAF1FB;
+    --paper:#F6F8FC;
+    --white:#FFFFFF;
+    --line:#E4E9F2;
+    --radius:18px;
+    --radius-sm:12px;
+    --shadow:0 18px 50px -22px rgba(10,26,51,.28);
+    --shadow-sm:0 8px 24px -14px rgba(10,26,51,.25);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--ink);background:var(--white);line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+  a{text-decoration:none;color:inherit}
+  .eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mint-dark)}
+
+  /* debtor top bar */
+  .topbar{background:var(--ink);color:#D7E0F0}
+  .topbar .wrap{display:flex;align-items:center;justify-content:center;gap:14px;height:46px;font-size:14px;font-weight:500;flex-wrap:wrap}
+  .topbar .tb-ico{color:var(--mint);font-weight:800}
+  .topbar a{color:#fff;font-weight:700;display:inline-flex;align-items:center;gap:6px;border-bottom:1.5px solid var(--mint);padding-bottom:1px}
+  .topbar a:hover{color:var(--mint)}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:21px;letter-spacing:-.02em}
+  .logo .mark{width:34px;height:34px;border-radius:10px;background:var(--navy);display:grid;place-items:center;color:#fff;font-size:18px;font-weight:800}
+  .logo .mark b{color:var(--mint)}
+  .logo-img{height:34px;width:auto;display:block}
+  .foot-grid .logo-img{height:32px}
+  .nav-links{display:flex;gap:34px;font-size:15px;font-weight:500;color:var(--ink-soft)}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;border-radius:999px;padding:13px 24px;transition:.18s;cursor:pointer;border:none}
+  .btn-primary{background:var(--mint);color:var(--navy)}
+  .btn-primary:hover{background:var(--mint-dark);color:#fff;transform:translateY(-1px)}
+  .btn-ghost{color:var(--ink);font-weight:600}
+  .btn-ghost:hover{color:var(--mint-dark)}
+  .btn-dark{background:var(--navy);color:#fff}
+  .btn-dark:hover{background:var(--ink);transform:translateY(-1px)}
+  .btn-lg{padding:16px 30px;font-size:16px}
+
+  /* mobile hamburger */
+  .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:pointer;padding:0}
+  .nav-toggle span{display:block;width:20px;height:2px;border-radius:2px;background:var(--ink);margin:0 auto;transition:.22s}
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .mobile-menu{display:none;flex-direction:column;gap:4px;padding:14px 24px 22px;background:#fff;border-bottom:1px solid var(--line)}
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{font-size:16px;font-weight:600;color:var(--ink-soft);padding:13px 4px;border-bottom:1px solid var(--line)}
+  .mobile-menu a:hover{color:var(--ink)}
+  .mm-cta{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+  .mm-cta .btn{justify-content:center;border-bottom:none}
+  .mm-cta a{border-bottom:none;padding:0}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;background:
+    radial-gradient(120% 120% at 88% -10%, rgba(0,194,138,.16), transparent 46%),
+    radial-gradient(90% 90% at 4% 8%, rgba(14,42,87,.06), transparent 50%),
+    var(--white)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:84px 0 92px}
+  .pill{display:inline-flex;align-items:center;gap:9px;background:var(--mint-tint);color:var(--mint-dark);font-weight:700;font-size:13.5px;padding:8px 16px;border-radius:999px;margin-bottom:26px}
+  .pill .dot{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px rgba(0,194,138,.22)}
+  h1{font-size:58px;line-height:1.04;letter-spacing:-.035em;font-weight:800}
+  h1 .hl{color:var(--mint-dark);position:relative;white-space:nowrap}
+  .lead{font-size:19px;color:var(--ink-soft);margin:26px 0 34px;max-width:520px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .micro{display:flex;gap:24px;margin-top:30px;font-size:14px;color:var(--ink-soft);font-weight:500}
+  .micro span{display:flex;align-items:center;gap:8px}
+  .micro .tick{color:var(--mint-dark);font-weight:800}
+
+  /* hero card */
+  .hero-card{background:var(--white);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:26px;position:relative}
+  .hc-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  .hc-top .t{font-weight:700;font-size:15px}
+  .badge-paid{background:var(--mint-tint);color:var(--mint-dark);font-weight:700;font-size:12.5px;padding:6px 13px;border-radius:999px}
+  .hc-row{display:flex;align-items:center;justify-content:space-between;padding:16px 2px;border-bottom:1px solid var(--line)}
+  .hc-row:last-of-type{border-bottom:none}
+  .hc-left{display:flex;align-items:center;gap:13px}
+  .hc-ico{width:42px;height:42px;border-radius:12px;background:var(--sky);display:grid;place-items:center;color:var(--navy);font-size:18px}
+  .hc-ico.green{background:var(--mint-tint);color:var(--mint-dark)}
+  .hc-name{font-weight:700;font-size:14.5px}
+  .hc-sub{font-size:12.5px;color:var(--ink-soft)}
+  .hc-amt{font-weight:800;font-size:15px}
+  .hc-status{font-size:12px;font-weight:700;color:var(--mint-dark)}
+  .hc-foot{margin-top:18px;background:var(--navy);border-radius:16px;padding:18px 20px;color:#fff;display:flex;align-items:center;justify-content:space-between}
+  .hc-foot .lbl{font-size:13px;color:#A9BBDA}
+  .hc-foot .big{font-size:24px;font-weight:800;letter-spacing:-.02em}
+  .hc-foot .big b{color:var(--mint)}
+  .float-tag{position:absolute;top:-16px;right:-14px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);border-radius:14px;padding:11px 15px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:13.5px}
+  .float-tag .ring{width:30px;height:30px;border-radius:50%;background:var(--mint-tint);color:var(--mint-dark);display:grid;place-items:center;font-size:15px}
+
+  /* logos / trust */
+  .trust{padding:34px 0 8px;border-top:1px solid var(--line)}
+  .trust p{text-align:center;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#90A0BD;margin-bottom:20px}
+  .trust-row{display:flex;justify-content:center;flex-wrap:wrap;gap:18px 40px;align-items:center}
+  .trust-row .award{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink-soft);font-size:15px}
+  .trust-row .award i{color:var(--mint-dark)}
+
+  /* path split – två tydliga vägar */
+  .pathwrap{padding:78px 0 12px}
+  .path-head{text-align:center;max-width:620px;margin:0 auto 38px}
+  .path-head h2{font-size:32px;letter-spacing:-.03em;font-weight:800;margin-top:12px}
+  .path-head p{color:var(--ink-soft);font-size:17px;margin-top:12px}
+  .paths{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .path{position:relative;border-radius:24px;padding:38px 36px;overflow:hidden;display:flex;flex-direction:column;min-height:300px}
+  .path .tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:7px 14px;border-radius:999px;align-self:flex-start;margin-bottom:auto}
+  .path .pico{width:60px;height:60px;border-radius:17px;display:grid;place-items:center;font-size:27px;margin:24px 0 18px}
+  .path h3{font-size:25px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:11px}
+  .path p{font-size:15.5px;line-height:1.55;margin-bottom:26px}
+  .path .pbtn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:16px;border-radius:999px;padding:15px 28px;align-self:flex-start;transition:.18s}
+  /* företagare */
+  .path.biz{background:var(--mint-tint);border:1px solid #BCEEDD}
+  .path.biz .tag{background:#fff;color:var(--mint-dark)}
+  .path.biz .pico{background:var(--mint);color:var(--navy)}
+  .path.biz h3{color:var(--navy)}
+  .path.biz p{color:#2C5B4D}
+  .path.biz .pbtn{background:var(--navy);color:#fff}
+  .path.biz .pbtn:hover{background:var(--ink);transform:translateX(3px)}
+  /* gäldenär */
+  .path.debt{background:var(--navy);border:1px solid var(--navy);color:#fff}
+  .path.debt::after{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(0,194,138,.18),transparent 65%);bottom:-130px;left:-90px}
+  .path.debt .tag{background:rgba(0,194,138,.18);color:var(--mint)}
+  .path.debt .pico{background:rgba(255,255,255,.1);color:var(--mint)}
+  .path.debt h3{color:#fff;position:relative;z-index:1}
+  .path.debt p{color:#B9C7E2;position:relative;z-index:1}
+  .path.debt .pbtn{background:var(--mint);color:var(--navy);position:relative;z-index:1}
+  .path.debt .pbtn:hover{background:#fff;transform:translateX(3px)}
+
+  /* section base */
+  section{padding:92px 0}
+  .sec-head{max-width:680px;margin:0 auto 56px;text-align:center}
+  .sec-head h2{font-size:40px;letter-spacing:-.03em;font-weight:800;line-height:1.1;margin-top:14px}
+  .sec-head p{font-size:18px;color:var(--ink-soft);margin-top:16px}
+
+  /* value cards */
+  .features{background:var(--paper)}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px;transition:.2s}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm);border-color:#D4DCEC}
+  .card .ico{width:54px;height:54px;border-radius:15px;background:var(--mint-tint);color:var(--mint-dark);display:grid;place-items:center;font-size:24px;margin-bottom:22px}
+  .card h3{font-size:21px;font-weight:700;letter-spacing:-.01em;margin-bottom:10px}
+  .card p{color:var(--ink-soft);font-size:15.5px}
+
+  /* steps */
+  .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;position:relative}
+  .step{position:relative;padding-top:8px}
+  .step .num{width:50px;height:50px;border-radius:14px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:20px;font-weight:800;margin-bottom:22px}
+  .step h3{font-size:20px;font-weight:700;margin-bottom:9px}
+  .step p{color:var(--ink-soft);font-size:15.5px}
+  .step .line{position:absolute;top:33px;left:62px;right:-20px;height:2px;background:linear-gradient(90deg,var(--line),transparent);}
+  .step:last-child .line{display:none}
+
+  /* split highlight */
+  .split{background:var(--navy);color:#fff;border-radius:28px;padding:64px 60px;display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;overflow:hidden;position:relative}
+  .split::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(0,194,138,.22),transparent 65%);top:-120px;right:-90px}
+  .split .eyebrow{color:var(--mint)}
+  .split h2{font-size:38px;letter-spacing:-.03em;font-weight:800;line-height:1.12;margin:14px 0 18px}
+  .split p{color:#B9C7E2;font-size:17px;max-width:440px}
+  .split-list{position:relative;z-index:1}
+  .sl-item{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .sl-item:last-child{border-bottom:none}
+  .sl-ico{flex:0 0 auto;width:44px;height:44px;border-radius:12px;background:rgba(0,194,138,.16);color:var(--mint);display:grid;place-items:center;font-size:19px}
+  .sl-item h4{font-size:16.5px;font-weight:700;margin-bottom:3px}
+  .sl-item p{font-size:14.5px;color:#A9BBDA;margin:0}
+
+  /* stats */
+  .stats{background:var(--paper)}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .stat{text-align:center;padding:8px}
+  .stat .n{font-size:46px;font-weight:800;letter-spacing:-.04em;color:var(--navy)}
+  .stat .n b{color:var(--mint-dark)}
+  .stat .l{font-size:15px;color:var(--ink-soft);font-weight:500;margin-top:4px}
+
+  /* benefits two-col */
+  .benefits-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 40px;max-width:900px;margin:0 auto}
+  .ben{display:flex;gap:16px;align-items:flex-start;padding:20px;border-radius:var(--radius-sm);transition:.18s}
+  .ben:hover{background:var(--paper)}
+  .ben .bi{flex:0 0 auto;width:46px;height:46px;border-radius:12px;background:var(--sky);color:var(--navy);display:grid;place-items:center;font-size:20px}
+  .ben h4{font-size:17px;font-weight:700;margin-bottom:4px}
+  .ben p{font-size:14.5px;color:var(--ink-soft)}
+
+  /* cta band */
+  .cta-band{padding:100px 0}
+  .cta-inner{background:
+    radial-gradient(100% 140% at 50% 0%, rgba(0,194,138,.18), transparent 55%),
+    var(--navy);
+    border-radius:30px;padding:72px 40px;text-align:center;color:#fff;position:relative;overflow:hidden}
+  .cta-inner h2{font-size:44px;letter-spacing:-.035em;font-weight:800;line-height:1.08}
+  .cta-inner p{font-size:19px;color:#B9C7E2;margin:18px auto 34px;max-width:520px}
+  .cta-inner .btn-primary{box-shadow:0 14px 40px -12px rgba(0,194,138,.6)}
+  .cta-note{margin-top:18px;font-size:14px;color:#8FA2C4}
+
+  /* footer */
+  footer{background:var(--ink);color:#C4CFE4;padding:72px 0 34px;font-size:14.5px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .foot-grid .logo{color:#fff;margin-bottom:18px}
+  .foot-grid .logo .mark{background:#fff}
+  .foot-grid .logo .mark span{color:var(--navy)}
+  .foot-blurb{color:#8DA0C0;max-width:280px;font-size:14.5px}
+  footer h5{color:#fff;font-size:14px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:18px}
+  footer ul{list-style:none}
+  footer li{margin-bottom:11px}
+  footer a:hover{color:#fff}
+  .foot-contact div{display:flex;gap:10px;align-items:center;margin-bottom:11px;color:#8DA0C0}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:26px;color:#7E92B4;font-size:13.5px;flex-wrap:wrap;gap:12px}
+  .socials{display:flex;gap:12px}
+  .socials a{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.07);display:grid;place-items:center;color:#C4CFE4;font-size:17px;transition:.18s}
+  .socials a:hover{background:var(--mint);color:var(--navy)}
+
+  @media(max-width:920px){
+    .paths{grid-template-columns:1fr}
+    .hero-grid,.split,.foot-grid{grid-template-columns:1fr}
+    .grid-3,.steps-grid,.stats-grid{grid-template-columns:1fr 1fr}
+    .benefits-grid{grid-template-columns:1fr}
+    h1{font-size:44px}.nav-links{display:none}.nav-cta{display:none}.nav-toggle{display:flex}
+    .step .line{display:none}.split{padding:44px 32px}
+  }
+  @media(max-width:560px){
+    .grid-3,.steps-grid,.stats-grid{grid-template-columns:1fr}
+    h1{font-size:36px}.sec-head h2{font-size:30px}.cta-inner h2{font-size:32px}
+    section{padding:64px 0}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="tb-ico">●</span>
+    <span>Har du fått ett inkassokrav?</span>
+    <a href="https://minasidor.agerapay.se/login.php" target="_blank" rel="noopener">Logga in på Mina sidor för att betala →</a>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#" aria-label="Agera Pay – startsida"><img class="logo-img" src="assets/agerapay-logo-morkgra.svg" alt="Agera Pay"></a>
+    <nav class="nav-links">
+      <a href="#sa-funkar">Så funkar det</a>
+      <a href="#fordelar">Fördelar</a>
+      <a href="#varfor">Varför Agera</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="https://kund.agerapay.se/" target="_blank" rel="noopener">Logga in</a>
+      <a class="btn btn-primary" href="https://api.agerapay.se/" target="_blank" rel="noopener">Bli kund</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#sa-funkar">Så funkar det</a>
+    <a href="#fordelar">Fördelar</a>
+    <a href="#varfor">Varför Agera</a>
+    <a href="#kontakt">Kontakt</a>
+    <div class="mm-cta">
+      <a class="btn btn-ghost" href="https://kund.agerapay.se/" target="_blank" rel="noopener">Logga in</a>
+      <a class="btn btn-primary" href="https://api.agerapay.se/" target="_blank" rel="noopener">Bli kund</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill"><span class="dot"></span> Helt kostnadsfri inkasso</span>
+      <h1>Vi får inte betalt om <span class="hl">inte du får betalt</span></h1>
+      <p class="lead">Till skillnad från andra inkassobolag får du alltid betalt först – före våra avgifter. Inga fasta kostnader, ingen bindningstid. Skicka in din faktura med BankID och låt oss göra jobbet.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="https://api.agerapay.se/" target="_blank" rel="noopener">Kom igång på 5 minuter →</a>
+        <a class="btn btn-ghost btn-lg" href="#sa-funkar">Se hur det funkar</a>
+      </div>
+      <div class="micro">
+        <span><span class="tick">✓</span> Ingen bindningstid</span>
+        <span><span class="tick">✓</span> Registrera med BankID</span>
+        <span><span class="tick">✓</span> Personlig support</span>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="float-tag"><span class="ring">✓</span> Du får betalt först</div>
+      <div class="hc-top">
+        <span class="t">Mina ärenden</span>
+        <span class="badge-paid">2 betalda</span>
+      </div>
+      <div class="hc-row">
+        <div class="hc-left">
+          <div class="hc-ico green">↑</div>
+          <div><div class="hc-name">Faktura #2041</div><div class="hc-sub">Nordvik Bygg AB</div></div>
+        </div>
+        <div style="text-align:right"><div class="hc-amt">24 500 kr</div><div class="hc-status">Betald</div></div>
+      </div>
+      <div class="hc-row">
+        <div class="hc-left">
+          <div class="hc-ico green">↑</div>
+          <div><div class="hc-name">Faktura #2038</div><div class="hc-sub">Mörk Konsult AB</div></div>
+        </div>
+        <div style="text-align:right"><div class="hc-amt">9 800 kr</div><div class="hc-status">Betald</div></div>
+      </div>
+      <div class="hc-row">
+        <div class="hc-left">
+          <div class="hc-ico">⏱</div>
+          <div><div class="hc-name">Faktura #2052</div><div class="hc-sub">Lindqvist Handel</div></div>
+        </div>
+        <div style="text-align:right"><div class="hc-amt">14 200 kr</div><div class="hc-sub">Pågår</div></div>
+      </div>
+      <div class="hc-foot">
+        <div><div class="lbl">Utbetalt till dig</div><div class="big">34 300 <b>kr</b></div></div>
+        <div style="text-align:right"><div class="lbl">Din kostnad</div><div class="big"><b>0 kr</b></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap trust">
+    <p>En del av Finansia · Karlskrona sedan 2016</p>
+    <div class="trust-row">
+      <span class="award"><i>★</i> Deloitte Technology Fast 50</span>
+      <span class="award"><i>★</i> DI Gasell 2020</span>
+      <span class="award"><i>★</i> Säker registrering med BankID</span>
+      <span class="award"><i>★</i> GDPR-säkrad hantering</span>
+    </div>
+  </div>
+</div>
+
+<!-- VÄGVAL: företagare vs gäldenär -->
+<div class="pathwrap" id="vagval">
+  <div class="wrap">
+    <div class="path-head">
+      <span class="eyebrow">Vem är du?</span>
+      <h2>Välj din väg – så hjälper vi dig rätt</h2>
+      <p>Är du företagare som vill driva in en faktura, eller har du fått ett inkassokrav att betala? Välj nedan så hamnar du rätt direkt.</p>
+    </div>
+    <div class="paths">
+      <div class="path biz">
+        <span class="tag">För företagare</span>
+        <div class="pico">⇪</div>
+        <h3>Jag vill driva in en obetald faktura</h3>
+        <p>Skicka in ditt ärende kostnadsfritt och låt oss göra jobbet. Du registrerar dig på minuter med BankID – och får alltid betalt först.</p>
+        <a class="pbtn" href="https://api.agerapay.se/" target="_blank" rel="noopener">Bli kund &amp; skicka inkasso →</a>
+      </div>
+      <div class="path debt">
+        <span class="tag">Har fått ett krav</span>
+        <div class="pico">⮐</div>
+        <h3>Jag har fått ett inkassokrav</h3>
+        <p>Logga in på Mina sidor för att se ditt ärende, ställa frågor och betala tryggt och enkelt. Inga konstigheter – vi hjälper dig.</p>
+        <a class="pbtn" href="https://minasidor.agerapay.se/login.php" target="_blank" rel="noopener">Gå till Mina sidor →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VALUE -->
+<section class="features" id="fordelar">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Varför företagare väljer oss</span>
+      <h2>Låt oss göra jobbet – få mer tid till annat</h2>
+      <p>Obetalda fakturor kostar både tid och sinnesfrid. Vi tar över ärendet helt, behåller en god kundrelation och ser till att du får betalt.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="ico">◎</div>
+        <h3>Din kund är vår kund</h3>
+        <p>Vi behandlar varje ärende med nya ögon, respekt och förståelse. En bibehållen god relation är en självklarhet för oss.</p>
+      </div>
+      <div class="card">
+        <div class="ico">⏱</div>
+        <h3>Vi gör jobbet åt dig</h3>
+        <p>Vi har kunskapen, tiden och erfarenheten. Lämna över fordringen så lägger du din tid på det som faktiskt är viktigt.</p>
+      </div>
+      <div class="card">
+        <div class="ico">⊘</div>
+        <h3>Helt kostnadsfritt</h3>
+        <p>Vår inkassotjänst kostar dig ingenting. Inga fasta avgifter och inget löpande avtal som binder upp dig.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="sa-funkar">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Så funkar det</span>
+      <h2>Bli kund på mindre än 5 minuter</h2>
+      <p>Med BankID registrerar du dig helt digitalt på bara några minuter – enkelt, snabbt och säkert.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="line"></div>
+        <div class="num">1</div>
+        <h3>Registrera med BankID</h3>
+        <p>Enkelt, snabbt och säkert. Välj sedan vilket av dina företag du vill aktivera.</p>
+      </div>
+      <div class="step">
+        <div class="line"></div>
+        <div class="num">2</div>
+        <h3>Ladda upp din faktura</h3>
+        <p>I portalen laddar du enkelt upp och skickar in fakturan. Flera samtidigt går självklart bra.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Klart – du får betalt</h3>
+        <p>Vi tar över ärendet helt. Så fort din kund betalat får du dina pengar – före våra avgifter.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px">
+      <a class="btn btn-dark btn-lg" href="https://api.agerapay.se/" target="_blank" rel="noopener">Bli kund nu →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SPLIT HIGHLIGHT -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="eyebrow">Tvärtom mot andra inkassobolag</span>
+        <h2>Du får alltid betalt först</h2>
+        <p>Vi vänder på ordningen. Du som kund får dina pengar innan vi tar ut våra avgifter – inte tvärtom. Vinner du, vinner vi.</p>
+        <a class="btn btn-primary btn-lg" href="https://kund.agerapay.se/" target="_blank" rel="noopener" style="margin-top:28px">Skicka inkasso →</a>
+      </div>
+      <div class="split-list">
+        <div class="sl-item">
+          <div class="sl-ico">✓</div>
+          <div><h4>Du får alltid betalt först</h4><p>Dina pengar prioriteras före våra kostnader och avgifter.</p></div>
+        </div>
+        <div class="sl-item">
+          <div class="sl-ico">⊘</div>
+          <div><h4>Inget bundet avtal</h4><p>Inga förpliktelser. Du väljer själv när du vill använda tjänsten.</p></div>
+        </div>
+        <div class="sl-item">
+          <div class="sl-ico">♥</div>
+          <div><h4>Din kund är viktig för oss</h4><p>Vi bevarar relationen och behandlar varje ärende med förståelse.</p></div>
+        </div>
+        <div class="sl-item">
+          <div class="sl-ico">☎</div>
+          <div><h4>Personlig support</h4><p>Riktiga människor som lyssnar och agerar – när du behöver det.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat"><div class="n">0 <b>kr</b></div><div class="l">Kostnad för dig</div></div>
+      <div class="stat"><div class="n">&lt;5 <b>min</b></div><div class="l">Att bli kund</div></div>
+      <div class="stat"><div class="n">2020</div><div class="l">Grundat av Finansia</div></div>
+      <div class="stat"><div class="n">100<b>%</b></div><div class="l">Digital med BankID</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="varfor">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Varför Agera Pay</span>
+      <h2>Bara fördelar med att vara kund</h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="ben"><div class="bi">⚡</div><div><h4>Vi agerar</h4><p>Vi lyssnar och agerar därefter, så att ärenden löses så smidigt som möjligt.</p></div></div>
+      <div class="ben"><div class="bi">↑</div><div><h4>Få betalt först</h4><p>Du får alltid betalt innan vi tar ut våra avgifter.</p></div></div>
+      <div class="ben"><div class="bi">◎</div><div><h4>Din kund i fokus</h4><p>En bibehållen god kundrelation är en självklarhet för oss.</p></div></div>
+      <div class="ben"><div class="bi">⏱</div><div><h4>Vi gör jobbet</h4><p>Kunskap, tid och erfarenhet – vi gör gärna jobbet åt dig.</p></div></div>
+      <div class="ben"><div class="bi">⊘</div><div><h4>Inget bundet avtal</h4><p>Inga förpliktelser. Använd tjänsten precis när du behöver.</p></div></div>
+      <div class="ben"><div class="bi">★</div><div><h4>Kostnadsfri tjänst</h4><p>Vår inkassotjänst är helt kostnadsfri för dig som kund.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-inner">
+      <h2>Redo att få betalt för dina fakturor?</h2>
+      <p>Registrera dig digitalt med BankID och skicka in din första faktura på mindre än fem minuter. Helt kostnadsfritt.</p>
+      <a class="btn btn-primary btn-lg" href="https://api.agerapay.se/" target="_blank" rel="noopener">Bli kund →</a>
+      <div class="cta-note">Har du fått ett inkassokrav? <a href="https://minasidor.agerapay.se/login.php" target="_blank" rel="noopener" style="color:var(--mint);font-weight:700">Logga in på Mina sidor →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="kontakt">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#" aria-label="Agera Pay – startsida"><img class="logo-img" src="assets/agerapay-logo-vit.svg" alt="Agera Pay"></a>
+        <p class="foot-blurb">Kostnadsfri inkasso för företagare. En del av Finansia Fakturatjänst AB, med huvudkontor i Karlskrona.</p>
+      </div>
+      <div>
+        <h5>Tjänsten</h5>
+        <ul>
+          <li><a href="https://kund.agerapay.se/" target="_blank" rel="noopener">Skicka inkasso</a></li>
+          <li><a href="#sa-funkar">Så funkar det</a></li>
+          <li><a href="#varfor">Varför Agera Pay</a></li>
+          <li><a href="https://api.agerapay.se/" target="_blank" rel="noopener">Bli kund</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Konto</h5>
+        <ul>
+          <li><a href="https://kund.agerapay.se/login.aspx" target="_blank" rel="noopener">Kundportal</a></li>
+          <li><a href="https://minasidor.agerapay.se/login.php" target="_blank" rel="noopener">Mina sidor</a></li>
+          <li><a href="https://kund.agerapay.se/" target="_blank" rel="noopener">Logga in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Kontakt</h5>
+        <div class="foot-contact">
+          <div>✉ info@agerapay.se</div>
+          <div>☎ 0771 18 60 60</div>
+          <div>⚲ Österleden 3, 371 34 Karlskrona</div>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Agera Pay AB · Orgnr 559409-7775 · <a href="https://agerapay.se/wp-content/uploads/2021/05/Agera-Pay_Policy-for-behandling-av-personuppgifter.pdf" target="_blank" rel="noopener">Integritetspolicy</a> · <a href="https://agerapay.se/wp-content/uploads/2025/09/allmanavillkor.pdf" target="_blank" rel="noopener">Allmänna villkor</a></div>
+      <div class="socials">
+        <a href="https://www.facebook.com/agera.pay/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/agerapay/" target="_blank" rel="noopener" aria-label="Instagram">◉</a>
+        <a href="https://www.linkedin.com/company/agera-pay/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var menu = document.getElementById('mobileMenu');
+    if(!toggle || !menu) return;
+    function setOpen(open){
+      menu.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Stäng meny' : 'Öppna meny');
+    }
+    toggle.addEventListener('click', function(){
+      setOpen(!menu.classList.contains('open'));
+    });
+    // Stäng menyn när man klickar på en länk
+    menu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){ setOpen(false); });
+    });
+    // Stäng om man gör fönstret brett igen
+    window.addEventListener('resize', function(){
+      if(window.innerWidth > 920) setOpen(false);
+    });
+  })();
+</script>
+
+</body>
+</html>
