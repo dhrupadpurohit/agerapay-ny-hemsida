@@ -242,6 +242,22 @@
   .ben h4{font-size:17px;font-weight:700;margin-bottom:4px}
   .ben p{font-size:14.5px;color:var(--ink-soft)}
 
+  /* faq */
+  .faq{background:var(--paper)}
+  .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:1000px;margin:0 auto}
+  .faq-col h3{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--mint-dark);margin-bottom:18px}
+  .faq-col.debt h3{color:var(--navy)}
+  .faq-col h3 .dot{width:9px;height:9px;border-radius:50%;background:var(--mint)}
+  .faq-col.debt h3 .dot{background:var(--navy)}
+  .faq-item{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-sm);margin-bottom:12px;overflow:hidden;transition:.18s}
+  .faq-item[open]{box-shadow:var(--shadow-sm)}
+  .faq-item summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:700;font-size:15.5px;color:var(--ink);display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary .chev{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--paper);display:grid;place-items:center;font-size:15px;color:var(--ink-soft);transition:.2s}
+  .faq-item[open] summary .chev{transform:rotate(45deg);background:var(--mint-tint);color:var(--mint-dark)}
+  .faq-item .ans{padding:0 20px 18px;font-size:14.5px;line-height:1.6;color:var(--ink-soft)}
+  .faq-item .ans a{color:var(--mint-dark);font-weight:600}
+
   /* cta band */
   .cta-band{padding:100px 0}
   .cta-inner{background:
@@ -275,6 +291,7 @@
     .hero-grid,.split,.foot-grid{grid-template-columns:1fr}
     .grid-3,.steps-grid,.stats-grid{grid-template-columns:1fr 1fr}
     .benefits-grid{grid-template-columns:1fr}
+    .faq-grid{grid-template-columns:1fr;gap:32px}
     h1{font-size:44px}.nav-links{display:none}.nav-cta{display:none}.nav-toggle{display:flex}
     .step .line{display:none}.split{padding:44px 32px}
   }
@@ -302,6 +319,7 @@
       <a href="#sa-funkar">Så funkar det</a>
       <a href="#fordelar">Fördelar</a>
       <a href="#varfor">Varför Agera</a>
+      <a href="#faq">Frågor</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
     <div class="nav-cta">
@@ -316,6 +334,7 @@
     <a href="#sa-funkar">Så funkar det</a>
     <a href="#fordelar">Fördelar</a>
     <a href="#varfor">Varför Agera</a>
+    <a href="#faq">Frågor</a>
     <a href="#kontakt">Kontakt</a>
     <div class="mm-cta">
       <a class="btn btn-ghost" href="https://kund.agerapay.se/" target="_blank" rel="noopener">Logga in</a>
@@ -532,6 +551,65 @@
       <div class="ben"><div class="bi">⏱</div><div><h4>Vi gör jobbet</h4><p>Kunskap, tid och erfarenhet – vi gör gärna jobbet åt dig.</p></div></div>
       <div class="ben"><div class="bi">⊘</div><div><h4>Inget bundet avtal</h4><p>Inga förpliktelser. Använd tjänsten precis när du behöver.</p></div></div>
       <div class="ben"><div class="bi">★</div><div><h4>Kostnadsfri tjänst</h4><p>Vår inkassotjänst är helt kostnadsfri för dig som kund.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Vanliga frågor</span>
+      <h2>Frågor &amp; svar</h2>
+      <p>Det vanligaste vi får – oavsett om du vill skicka inkasso eller har fått ett krav.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-col">
+        <h3><span class="dot"></span> För företagare</h3>
+        <details class="faq-item">
+          <summary>Vad kostar tjänsten? <span class="chev">+</span></summary>
+          <div class="ans">Ingenting för dig som företagare. Vår inkassotjänst är helt kostnadsfri – vi tar vår avgift av gäldenären, och du får alltid betalt först, före våra avgifter.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Hur skickar jag in en faktura? <span class="chev">+</span></summary>
+          <div class="ans">Du registrerar dig digitalt med BankID på under fem minuter och laddar upp din obetalda faktura. Sedan sköter vi resten – från påminnelse till indrivning.</div>
+        </details>
+        <details class="faq-item">
+          <summary>När får jag betalt? <span class="chev">+</span></summary>
+          <div class="ans">Så snart din kund har betalat betalar vi ut pengarna till dig – före våra egna avgifter. Har du frågor om en utbetalning når du oss på <a href="mailto:info@agerapay.se">info@agerapay.se</a>.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Finns det någon bindningstid? <span class="chev">+</span></summary>
+          <div class="ans">Nej. Inga fasta kostnader och ingen bindningstid – du använder tjänsten precis när du behöver den.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Vad händer med min kundrelation? <span class="chev">+</span></summary>
+          <div class="ans">Vi behandlar varje ärende med respekt och nya ögon. En bibehållen god kundrelation är en självklarhet för oss.</div>
+        </details>
+      </div>
+      <div class="faq-col debt">
+        <h3><span class="dot"></span> För dig som fått ett krav</h3>
+        <details class="faq-item">
+          <summary>Varför har jag fått ett inkassokrav? <span class="chev">+</span></summary>
+          <div class="ans">En faktura som är adresserad till dig har inte registrerats som betald och är nu förfallen. Betala hela beloppet så avslutas ärendet.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Måste jag betala räntan och avgifterna? <span class="chev">+</span></summary>
+          <div class="ans">Ja, det stämmer. Ränta och avgifter tillkommer från dagen efter förfallodatum, eftersom fordringsägaren lämnat dig en kredit.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Jag har inte fått min faktura <span class="chev">+</span></summary>
+          <div class="ans">Kontakta oss på <a href="mailto:hej@agerapay.se">hej@agerapay.se</a> så skickar vi en kopia på fakturan det gäller.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Jag vill bestrida fakturan <span class="chev">+</span></summary>
+          <div class="ans">Skicka ett mejl till oss på <a href="mailto:hej@agerapay.se">hej@agerapay.se</a> och beskriv så utförligt du kan. Vi för sedan en dialog med fakturaavsändaren tills ärendet är löst.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Vilket Bankgiro ska jag betala till? <span class="chev">+</span></summary>
+          <div class="ans">Vårt Bankgironummer är <strong>5676-1521</strong>. Ange OCR/referens från ditt krav så att betalningen registreras på rätt ärende.</div>
+        </details>
+      </div>
     </div>
   </div>
 </section>
